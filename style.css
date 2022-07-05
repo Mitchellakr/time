@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background-color: hsl(235, 16%, 14%);
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}
+
+h2 {
+    color: hsl(0, 0%, 100%);
+    font-size: 18px;
+    letter-spacing: 10px;
+}
+
+.hill {
+    bottom: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    align-items: center;
+}
+
+.days,
+.hours,
+.minutes,
+.secs {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.day-num,
+.hour-num,
+.min-num,
+.sec-num {
+    position: relative;
+    border-radius: 5px;
+    padding: 1em 1.5em;
+    box-shadow: 0 8px 0 hsl(240, 18%, 12%);
+    background: linear-gradient(180deg, hsla(235, 21%, 22%, 0.823)50%, hsla(236, 21%, 26%, 0.823)50%);
+}
+
+.day-num::before,
+.hour-num::before,
+.min-num::before,
+.sec-num::before {
+    content: "";
+    position: absolute;
+    padding: .3em;
+    border-radius: 50%;
+    background-color: hsl(235, 16%, 14%);
+    top: 47%;
+    left: -5px;
+}
+
+.day-num::after,
+.hour-num::after,
+.min-num::after,
+.sec-num::after {
+    content: "";
+    position: absolute;
+    padding: .3em;
+    border-radius: 50%;
+    background-color: hsl(235, 16%, 14%);
+    top: 47%;
+    right: -5px;
+}
+
+p {
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: hsl(237, 18%, 59%);
+}
+
+h1 {
+    font-size: 4.5em;
+    background-clip: text;
+    opacity: .8;
+    color: hsl(345, 95%, 68%);
+}
+
+.clock {
+    display: flex;
+    gap: 2em;
+}
+
+@media only screen and (max-width:520px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    img {
+        display: none;
+    }
+
+
+    body {
+        background-image: url(/images/bg-stars.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width:410px) {
+    h1 {
+        font-size: 2.2em;
+    }
+}
